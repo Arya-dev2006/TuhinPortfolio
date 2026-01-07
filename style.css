@@ -355,6 +355,7 @@ html {
     scroll-behavior: smooth;
     scrollbar-width: none; /* Firefox */
     -ms-overflow-style: none; /* IE and Edge */
+    overflow-x: hidden;
 }
 
 html::-webkit-scrollbar {
@@ -367,6 +368,20 @@ body {
     color: var(--dark-text);
     line-height: 1.6;
     overflow-x: hidden;
+}
+
+/* Media safety: prevent horizontal overflow on small screens */
+img, video {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Contain decorative visuals to avoid layout shift */
+.hero-visual,
+.about-visual,
+.visual-container {
+    overflow: hidden;
 }
 
 .container {
